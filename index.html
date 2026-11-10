@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dugnad School · Daycare, Kindergarten & Primary · Matuga–Semuto</title>
+  <meta name="description" content="Dugnad School in Kavule-Jomayi Estate, Wakiso. Daycare, Kindergarten and Primary. We Learn by Doing. Registration in progress.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --navy: #14213D;
+      --sky: #1AA3E8;
+      --red: #C8102E;
+      --green: #1B7A3D;
+      --sun: #F5C518;
+      --paper: #F4FAFF;
+      --card: #ffffff;
+      --ink: #14213D;
+      --muted: #4A5873;
+      --line: #D5E6F4;
+      --h: 'Poppins', 'Trebuchet MS', sans-serif;
+      --b: 'Open Sans', 'Segoe UI', Arial, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --paper: #0A1630;
+        --card: #122349;
+        --ink: #EAF2FF;
+        --muted: #B5C4E0;
+        --line: #243C6E;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+    body {
+      margin: 0;
+      font: 400 1.05rem/1.65 var(--b);
+      color: var(--ink);
+      background: var(--paper);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    img, svg { max-width: 100%; }
+    a { color: inherit; }
+    h1, h2, h3 { font-family: var(--h); line-height: 1.1; margin: 0 0 .5em; font-weight: 800; }
+    h1 { font-size: clamp(2.6rem, 7vw, 5rem); }
+    h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); }
+    h3 { font-size: 1.35rem; }
+    p { margin: 0 0 1em; max-width: 62ch; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+    section { padding: 72px 0; }
+    main { flex: 1 0 auto; }
+    :focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; }
+
+    .btn {
+      display: inline-block;
+      font: 700 1rem var(--b);
+      padding: 14px 26px;
+      border-radius: 999px;
+      text-decoration: none;
+      border: 0;
+      cursor: pointer;
+      min-height: 48px;
+      transition: filter .2s;
+    }
+    .btn.red { background: var(--red); color: #fff; }
+    .btn.ghost { background: transparent; border: 2px solid #fff; color: #fff; }
+    .btn.navy { background: var(--navy); color: #fff; }
+    .btn:hover { filter: brightness(1.1); }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: var(--navy);
+      color: #fff;
+    }
+    .bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      height: 68px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font: 800 1.35rem var(--h);
+    }
+    .brand small {
+      display: block;
+      font: 600 .72rem var(--b);
+      color: var(--sun);
+    }
+    nav ul {
+      display: flex;
+      gap: 4px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav a {
+      display: block;
+      padding: 10px 12px;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 8px;
+    }
+    nav a:hover, nav a[aria-current="page"] { background: rgba(255,255,255,.12); }
+    .menu {
+      display: none;
+      background: none;
+      border: 2px solid #fff;
+      color: #fff;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font: 700 1rem var(--b);
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      background: var(--sky);
+      color: #fff;
+      padding: 64px 0 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero .wrap {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 32px;
+      align-items: center;
+    }
+    .hero p { font-size: 1.2rem; color: #fff; }
+    .hero h1 span { display: block; color: var(--sun); }
+    .tag {
+      display: inline-block;
+      background: var(--red);
+      color: #fff;
+      font: 800 1rem var(--h);
+      padding: 6px 18px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+    .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+
+    /* ---------- TYPOGRAPHIC LOGO (DUGNAD) ---------- */
+    .logo-big {
+      width: min(100%, 380px);
+      justify-self: center;
+    }
+    .logo-mark {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 1 / 1;
+      padding: 40px 20px;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 20px 50px -12px rgba(0, 0, 0, .35),
+                  inset 0 0 0 8px #fff,
+                  inset 0 0 0 14px var(--sun);
+    }
+    .ring {
+      position: absolute;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 8px solid;
+      background: #fff;
+    }
+    .ring-red    { top: 6%; left: 50%; transform: translateX(-50%); border-color: var(--red); }
+    .ring-yellow { bottom: 12%; left: 6%; border-color: var(--sun); }
+    .ring-sky    { bottom: 12%; right: 6%; border-color: var(--sky); }
+
+    .logo-text {
+      font-family: var(--h);
+      font-weight: 800;
+      font-size: clamp(2.2rem, 7vw, 4rem);
+      line-height: 1;
+      letter-spacing: 2px;
+      color: var(--navy);
+      text-align: center;
+      margin-top: 18px;
+      text-shadow: 3px 3px 0 var(--sun);
+    }
+    .logo-tag {
+      font-family: var(--b);
+      font-weight: 700;
+      font-size: clamp(.7rem, 1.6vw, .95rem);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--red);
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 56px;
+    }
+    .strip div {
+      padding: 16px 12px;
+      text-align: center;
+      font: 800 1.05rem var(--h);
+      color: #fff;
+    }
+    .strip div:nth-child(1) { background: var(--red); }
+    .strip div:nth-child(2) { background: var(--green); }
+    .strip div:nth-child(3) { background: var(--navy); }
+    .strip div:nth-child(4) { background: #B8860B; }
+
+    /* CARDS */
+    .grid { display: grid; gap: 20px; }
+    .g3 { grid-template-columns: repeat(3, 1fr); }
+    .g2 { grid-template-columns: repeat(2, 1fr); }
+    .card {
+      background: var(--card);
+      border: 2px solid var(--line);
+      border-radius: 20px;
+      padding: 24px;
+    }
+    .prog { border-top: 10px solid var(--c); }
+    .prog:nth-child(1) { --c: var(--red); }
+    .prog:nth-child(2) { --c: var(--green); }
+    .prog:nth-child(3) { --c: var(--sky); }
+    .prog ul { padding-left: 1.1em; margin: 0; }
+    .prog .age { font-weight: 700; color: var(--muted); }
+    .ico {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+      background: var(--sun);
+    }
+    .alt { background: var(--card); }
+    .dark { background: var(--green); color: #fff; }
+    .dark p { color: #fff; }
+    .tick {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .tick li {
+      background: rgba(255,255,255,.14);
+      padding: 14px 16px 14px 48px;
+      border-radius: 14px;
+      position: relative;
+      font-weight: 700;
+    }
+    .tick li::before {
+      content: "✓";
+      position: absolute;
+      left: 14px;
+      top: 12px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--sun);
+      color: var(--navy);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+    }
+
+    /* FOOTER */
+    footer {
+      flex-shrink: 0;
+      background: var(--navy);
+      color: #fff;
+      text-align: center;
+      padding: 28px 20px;
+    }
+    footer b { color: var(--sun); font-family: var(--h); font-size: 1.2rem; }
+
+    /* RESPONSIVE */
+    @media (max-width: 860px) {
+      .menu { display: block; }
+      nav {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 68px;
+        background: var(--navy);
+        padding: 8px 20px 16px;
+        border-top: 1px solid rgba(255,255,255,.15);
+      }
+      nav.open { display: block; }
+      nav ul { flex-direction: column; }
+      .hero .wrap, .g2 { grid-template-columns: 1fr; }
+      .g3 { grid-template-columns: 1fr; }
+      .strip { grid-template-columns: 1fr 1fr; }
+      .tick { grid-template-columns: 1fr; }
+      .logo-big { width: 240px; order: -1; margin-bottom: 20px; }
+      section { padding: 52px 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="Dugnad School home">
+      <svg width="40" height="40" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="44" fill="#fff"/>
+        <circle cx="50" cy="22" r="11" fill="none" stroke="#C8102E" stroke-width="7"/>
+        <circle cx="20" cy="68" r="11" fill="none" stroke="#F5C518" stroke-width="7"/>
+        <circle cx="80" cy="68" r="11" fill="none" stroke="#1AA3E8" stroke-width="7"/>
+        <text x="50" y="62" text-anchor="middle" font-family="Poppins,sans-serif" font-weight="800" font-size="28" fill="#14213D">ABC</text>
+      </svg>
+      <span>Dugnad School<small>We Learn by Doing</small></span>
+    </a>
+    <button class="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="programmes.html">Programmes</a></li>
+        <li><a href="why.html">Why Dugnad</a></li>
+        <li><a href="admission.html">Admissions</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <span class="tag">Registration in progress</span>
+        <h1>Dugnad School <span>We Learn by Doing</span></h1>
+        <p>A growing school for children from six months to Primary 7, on Matuga–Semuto Road in Wakiso District. Hands-on lessons, safe grounds and balanced meals, one hour from Kampala.</p>
+        <div class="cta">
+          <a class="btn red" href="admission.html">Start admission</a>
+          <a class="btn ghost" href="contact.html">Contact the school</a>
+        </div>
+      </div>
+
+      <!-- Typographic Logo: DUGNAD -->
+      <div class="logo-big" role="img" aria-label="Dugnad School logo">
+        <div class="logo-mark">
+          <span class="ring ring-red" aria-hidden="true"></span>
+          <span class="ring ring-yellow" aria-hidden="true"></span>
+          <span class="ring ring-sky" aria-hidden="true"></span>
+          <span class="logo-text">DUGNAD</span>
+          <span class="logo-tag">We Learn by Doing</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Strip goes OUTSIDE the grid wrap, but INSIDE the hero -->
+    <div class="strip">
+      <div>Day Care</div>
+      <div>Kindergarten</div>
+      <div>Lower Primary</div>
+      <div>Boarding available</div>
+    </div>
+  </div>
+
+  <section class="alt">
+    <div class="wrap">
+      <h2>Three sections. One approach.</h2>
+      <p>A blended curriculum that puts the learner at the centre. Choose a section to explore.</p>
+      <div class="grid g3">
+        <article class="card prog">
+          <h3>Day Care</h3>
+          <p class="age">From 6 months</p>
+          <ul><li>7:30am – 4:30pm</li><li>Rest after lunch</li><li>Pick-up by 5:00pm</li></ul>
+          <p style="margin-top:12px"><a class="btn navy" href="programmes.html">Explore</a></p>
+        </article>
+        <article class="card prog">
+          <h3>Kindergarten</h3>
+          <p class="age">From 3 years</p>
+          <ul><li>7:00am – 12:30pm</li><li>Play, language, number work</li><li>Tablets in our computer lab</li></ul>
+          <p style="margin-top:12px"><a class="btn navy" href="programmes.html">Explore</a></p>
+        </article>
+        <article class="card prog">
+          <h3>Lower Primary</h3>
+          <p class="age">P.1 – P.3 and above, from 6 years</p>
+          <ul><li>7:30am – 4:30pm</li><li>Numeracy & English tested at admission</li><li>Day or boarding</li></ul>
+          <p style="margin-top:12px"><a class="btn navy" href="programmes.html">Explore</a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <h2>What we offer</h2>
+      <ul class="tick">
+        <li>A blended curriculum</li>
+        <li>Learner-centred approach</li>
+        <li>ICT and e-learning</li>
+        <li>Child safety and 24-hour CCTV</li>
+        <li>Three balanced meals a day</li>
+        <li>Clean environment</li>
+        <li>School van transport</li>
+        <li>Qualified, passionate educators</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <b>We Learn by Doing</b><br>
+  © 2026 Dugnad Education Services. Dugnad School, Matuga–Semuto Road.
+</footer>
+
+<script>
+(function(){
+  var mb=document.querySelector('.menu'),nv=document.getElementById('nav');
+  if(mb&&nv){
+    mb.addEventListener('click',function(){var o=nv.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+    nv.addEventListener('click',function(e){if(e.target.tagName==='A'){nv.classList.remove('open');mb.setAttribute('aria-expanded','false')}});
+  }
+})();
+</script>
+
+</body>
+</html>
